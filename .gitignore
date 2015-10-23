@@ -5,9 +5,9 @@
 *.suo
 *.user
 *.sln.docstates
+.vs
 
 # Build results
-
 [Dd]ebug/
 [Rr]elease/
 x64/
@@ -15,11 +15,10 @@ build/
 [Bb]in/
 [Oo]bj/
 [Oo]ut/
-[Nn]uGetPackages/
 
 
 # Disable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
-[Pp]ackages/
+#[Pp]ackages/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -61,7 +60,6 @@ ipch/
 *.psess
 *.vsp
 *.vspx
-.vs
 
 # Guidance Automation Toolkit
 *.gpState

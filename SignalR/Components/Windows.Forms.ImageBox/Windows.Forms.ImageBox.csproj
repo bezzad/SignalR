@@ -36,10 +36,11 @@
     <NoWarn>1607</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>BehzadPublic.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -72,9 +73,6 @@
     </Compile>
     <Compile Include="ZoomLevelCollection.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="BehzadPublic.snk" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ImageBox.bmp" />

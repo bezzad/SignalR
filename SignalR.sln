@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{45106C92-5F91-4835-9626-E80B507035F4}"
 EndProject
@@ -17,7 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Solution Items\Delete SignalRService.bat = Solution Items\Delete SignalRService.bat
 		Solution Items\Install SignalR Service.bat = Solution Items\Install SignalR Service.bat
-		Solution Items\Readme.txt = Solution Items\Readme.txt
+		LICENSE = LICENSE
+		README.md = README.md
 		Solution Items\Run Service (With installation).bat = Solution Items\Run Service (With installation).bat
 		Solution Items\Run Service On WPF.bat = Solution Items\Run Service On WPF.bat
 		Solution Items\Uninstall SignalR Service.bat = Solution Items\Uninstall SignalR Service.bat
@@ -346,10 +346,10 @@ Global
 		{A9D807B7-8496-4A9F-8309-2708F10C431B} = {45106C92-5F91-4835-9626-E80B507035F4}
 		{1D9258DE-19E1-45BD-B18B-51AC46D1B96C} = {45106C92-5F91-4835-9626-E80B507035F4}
 		{59BC7605-809F-4420-B2B6-72C4B9F48907} = {45106C92-5F91-4835-9626-E80B507035F4}
-		{BD7DA59E-3036-4DAF-BCA9-F90710DCE441} = {45106C92-5F91-4835-9626-E80B507035F4}
 		{7C5C6561-7CAE-40FF-91ED-54D598AAC283} = {7B1A83E2-66A3-40CE-8F33-C28B9388B4F8}
 		{4159C8D3-C18D-4BED-8BE6-9BAD1B0CA4F6} = {A0486E54-CA18-4628-84E4-0F52B2B77D00}
 		{CD5DA55B-C69B-45C7-AEFE-C9F4990CD873} = {A0486E54-CA18-4628-84E4-0F52B2B77D00}
+		{BD7DA59E-3036-4DAF-BCA9-F90710DCE441} = {45106C92-5F91-4835-9626-E80B507035F4}
 		{6DD14A85-CCFC-4774-BD26-0F5772512319} = {A0486E54-CA18-4628-84E4-0F52B2B77D00}
 		{C7EBD676-248B-484A-A5CB-DF879670652A} = {98F24D5E-B87A-4678-B767-84E2314B4AA7}
 	EndGlobalSection
