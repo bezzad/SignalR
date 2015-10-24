@@ -49,8 +49,8 @@ namespace ClientsController.View
             }
 
 
-            List<ILog> logs = await CustomClient.Instance.InvokeAsync<List<ILog>>("DynamicMethodRunner",
-                "SignalR.WindowsEventLog",
+            List<Log> logs = await CustomClient.Instance.InvokeAsync<List<Log>>("DynamicMethodRunner",
+                "SignalR.Core.WindowsEventLog",
                 "GetEntryCollection",
                 Type.GetTypeArray(parameters.ToArray()).Select(x => x.AssemblyQualifiedName),
                 parameters);
@@ -81,7 +81,7 @@ namespace ClientsController.View
         private async void btnClearLogs_Click(object sender, EventArgs e)
         {
             await CustomClient.Instance.InvokeAsync("DynamicMethodRunner",
-                "SignalR.WindowsEventLog",
+                "SignalR.Core.WindowsEventLog",
                 "DeleteCurrentSource",
                 new Type[0],
                 new object[0]);
