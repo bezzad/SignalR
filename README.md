@@ -5,37 +5,34 @@
 
 A reusable win32 API  for connect any client to server or each other clients. Send data or code from one client to other clients included.
 
+---------------------------
 ### SignalR Server
 If you want to install or unistall a service for signalR server or just run the server without installing, do following commands:
 
-* Install signalR service:
+* Install signalR service: <br/>
+	`$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /i` <br/>
+	or <br/>
+	`$ SignalR\Solution Items\InstallSignalRService.bat`
 
-	$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /i
-	or
-	$ SignalR\Solution Items\InstallSignalRService.bat
 
-
-* Uninstall signalR service:
-
-	`$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /u`
-	or
+* Uninstall signalR service: <br/>
+	`$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /u` <br/>
+	or <br/>
 	`$ SignalR\Solution Items\UninstallSignalRService.bat`
 
 
-* Delete signalR service:
-
+* Delete signalR service: <br/>
 	`$ SignalR\Solution Items\DeleteSignalRService.bat`
 
 
-* Execute signalR server (without install service):
-
-	`$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /d`
-	or
+* Execute signalR server (without install service): <br/>
+	`$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /d` <br/>
+	or <br/>
 	`$ SignalR\Solution Items\RunServiceOnWPF.bat`
 
 	![wpfServer](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/wpfServer.PNG)
 
-
+--------------------------
 ### SignalR Clients
 A sample project in win32 for present signalR client
 
@@ -54,19 +51,22 @@ In this application you can fetch any events of server from server windows logs 
 And by selecting one client in from list you can to control that by this form:
 ![ControlUser](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/selectedUserController.png)
 
-in `Control User` form you can to send a message to selected users or execute an stored procedure on that clients. <br/>
+In `Control User` form you can to send a message to selected users or execute an stored procedure on that clients. <br/>
 By click on `Custom Procedure` you should see this form:
 ![dynamicCodeExec](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/dynamicCodeExec.PNG)
 
-In `Runtime Dynamic Compiler` form you can type your c# codes to execute on selected users system.
+In `Runtime Dynamic Compiler` form you can type your c# codes to executed on selected users system.
 
+---------------------
 ### Note
 
-Install Nuget packages for server:
+For create your custom projects you must to know this package locations:
+
+Install Nuget packages for server project:
 
 	PM> Install-Package Microsoft.AspNet.SignalR.SelfHost
 	PM> Install-Package Microsoft.Owin.Cors
 
-Install Nuget packages for clients:
+Install Nuget packages for clients project:
 
 	PM> Install-Package Microsoft.AspNet.SignalR.Client
