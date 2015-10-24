@@ -445,7 +445,7 @@ namespace SignalR.Core.View
             // btnExecuteOnClients
             // 
             this.btnExecuteOnClients.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnExecuteOnClients.Image = global::SignalR.Core.Properties.Resources.Executer;
+            this.btnExecuteOnClients.Image = global::ClientsController.Properties.Resources.Executer;
             this.btnExecuteOnClients.Name = "btnExecuteOnClients";
             this.btnExecuteOnClients.Size = new System.Drawing.Size(189, 52);
             this.btnExecuteOnClients.Text = "Execute Procedure";
@@ -457,7 +457,7 @@ namespace SignalR.Core.View
             // btnCompile
             // 
             this.btnCompile.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnCompile.Image = global::SignalR.Core.Properties.Resources.Compile;
+            this.btnCompile.Image = global::ClientsController.Properties.Resources.Compile;
             this.btnCompile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCompile.Name = "btnCompile";
             this.btnCompile.Size = new System.Drawing.Size(122, 52);

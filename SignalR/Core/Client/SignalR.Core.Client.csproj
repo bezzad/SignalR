@@ -68,6 +68,8 @@
     <Compile Include="CodeGenerator.cs" />
     <Compile Include="CompileResult.cs" />
     <Compile Include="EmbeddedFontLoader.cs" />
+    <Compile Include="Extensions\DataGridViewExtensions.cs" />
+    <Compile Include="Extensions\RichTextBoxExtensions.cs" />
     <Compile Include="Finalizer.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Model\Model.cs" />

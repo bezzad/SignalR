@@ -58,15 +58,12 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\Controller\Extensions\RichTextBoxExtensions.cs">
-      <Link>RichTextBoxExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\Controller\Controls\AlertButton.cs">
+    <Compile Include="..\ClientsController\Controls\AlertButton.cs">
       <Link>AlertButton.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\..\Core\Controller\Controls\AlertButton.Designer.cs">
-      <Link>AlertButton.Designer.cs</Link>
+    <Compile Include="..\ClientsController\Controls\AlertButton.designer.cs">
+      <Link>AlertButton.designer.cs</Link>
       <DependentUpon>AlertButton.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientForm.cs">
