@@ -17,23 +17,23 @@ If you want to install or unistall a service for signalR server or just run the 
 
 * Uninstall signalR service:
 
-	$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /u
+	`$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /u`
 	or
-	$ SignalR\Solution Items\UninstallSignalRService.bat
+	`$ SignalR\Solution Items\UninstallSignalRService.bat`
 
 
 * Delete signalR service:
 
-	$ SignalR\Solution Items\DeleteSignalRService.bat
+	`$ SignalR\Solution Items\DeleteSignalRService.bat`
 
 
 * Execute signalR server (without install service):
 
-	$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /d
+	`$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /d`
 	or
-	$ SignalR\Solution Items\RunServiceOnWPF.bat
+	`$ SignalR\Solution Items\RunServiceOnWPF.bat`
 
-	!wpfServer](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/wpfServer.PNG)
+	![wpfServer](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/wpfServer.PNG)
 
 
 ### SignalR Clients
