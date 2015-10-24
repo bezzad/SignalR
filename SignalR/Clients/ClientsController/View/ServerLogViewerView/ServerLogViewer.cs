@@ -137,9 +137,9 @@ namespace SignalR.Core.View.ServerLogViewerView
             }
         }
 
-        public List<LogModel> Logs
+        public List<Log> Logs
         {
-            get { return (List<LogModel>)dgvLogs.DataSource; }
+            get { return (List<Log>)dgvLogs.DataSource; }
             set { Presenter.SafeInvoker(() => dgvLogs.DataSource = value); }
         }
 

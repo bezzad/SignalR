@@ -10,7 +10,7 @@ namespace SignalR.Core.View
         DateTime FromDate { get; set; }
         DateTime ToDate { get; set; }
         LevelType CheckedLevel { get; set; }
-        List<LogModel> Logs { get; set; }
+        List<Log> Logs { get; set; }
 
         new ServerLogViewerPresenter Presenter { get; }
     }

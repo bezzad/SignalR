@@ -72,7 +72,6 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Model\LogModel.cs" />
     <Compile Include="Presenter\MainControllerPresenter.cs" />
     <Compile Include="Presenter\ServerLogViewerPresenter.cs" />
     <Compile Include="Controls\AlertButton.cs">
@@ -167,11 +166,11 @@
       <Project>{4159c8d3-c18d-4bed-8be6-9bad1b0ca4f6}</Project>
       <Name>Windows.Forms.ImageBox</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\QuickMapper\QuickMapper.csproj">
-      <Project>{c7ebd676-248b-484a-a5cb-df879670652a}</Project>
-      <Name>QuickMapper</Name>
+    <ProjectReference Include="..\..\Core\SignalR.Core\SignalR.Core.csproj">
+      <Project>{448c0bf8-8f02-4bb8-9fe2-6ae262aaef91}</Project>
+      <Name>SignalR.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\Client\SignalR.Core.Client.csproj">
+    <ProjectReference Include="..\..\Core\SignalR.Core.Client\SignalR.Core.Client.csproj">
       <Project>{1d9258de-19e1-45bd-b18b-51ac46d1b96c}</Project>
       <Name>SignalR.Core.Client</Name>
     </ProjectReference>

@@ -4,38 +4,36 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C5C6561-7CAE-40FF-91ED-54D598AAC283}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{1D9258DE-19E1-45BD-B18B-51AC46D1B96C}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinFormClient</RootNamespace>
-    <AssemblyName>WinFormClient</AssemblyName>
+    <RootNamespace>SignalR.Core</RootNamespace>
+    <AssemblyName>SignalR.Core.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Out\Clients\WinFormClient\</OutputPath>
+    <OutputPath>..\..\..\Out\Core\Client\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Out\Clients\WinFormClient\</OutputPath>
+    <OutputPath>..\..\..\Out\Core\Client\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.SignalR.Client">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\net40\Microsoft.AspNet.SignalR.Client.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -43,65 +41,70 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\ClientsController\Controls\AlertButton.cs">
-      <Link>AlertButton.cs</Link>
+    <Compile Include="AssemblyManager.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="CodeGenerator.cs" />
+    <Compile Include="CompileResult.cs" />
+    <Compile Include="EmbeddedFontLoader.cs" />
+    <Compile Include="Finalizer.cs" />
+    <Compile Include="NetworkHelper.cs" />
+    <Compile Include="Presenter\IPresenter.cs" />
+    <Compile Include="Presenter\Presenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenCapture.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="View\IView.cs" />
+    <Compile Include="View\IView`T.cs" />
+    <Compile Include="WaitSplash.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\ClientsController\Controls\AlertButton.designer.cs">
-      <Link>AlertButton.designer.cs</Link>
-      <DependentUpon>AlertButton.cs</DependentUpon>
+    <Compile Include="WaitSplash.Designer.cs">
+      <DependentUpon>WaitSplash.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClientForm.Designer.cs">
-      <DependentUpon>ClientForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomClient.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ClientForm.resx">
-      <DependentUpon>ClientForm.cs</DependentUpon>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <EmbeddedResource Include="Resources\irsans.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitSplash.resx">
+      <DependentUpon>WaitSplash.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Components\Windows.Forms.HintTextBox\Windows.Forms.HintTextBox.csproj">
-      <Project>{cd5da55b-c69b-45c7-aefe-c9f4990cd873}</Project>
-      <Name>Windows.Forms.HintTextBox</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\SignalR.Core.Client\SignalR.Core.Client.csproj">
-      <Project>{1d9258de-19e1-45bd-b18b-51ac46d1b96c}</Project>
-      <Name>SignalR.Core.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\SignalR.Core\SignalR.Core.csproj">
+    <EmbeddedResource Include="Resources\Led.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\sakht.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SignalR.Core\SignalR.Core.csproj">
       <Project>{448c0bf8-8f02-4bb8-9fe2-6ae262aaef91}</Project>
       <Name>SignalR.Core</Name>
     </ProjectReference>

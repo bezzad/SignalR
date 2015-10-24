@@ -5,7 +5,6 @@ using System.Globalization;
 using System.Windows.Forms;
 using Microsoft.AspNet.SignalR.Client;
 using SignalR.Core.Extensions;
-using SignalR.Core.Model;
 
 namespace WinFormClient
 {
