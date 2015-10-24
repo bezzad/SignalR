@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using SignalR.Core;
 using SignalR.Core.Model;
 
-namespace SignalR.Core.View
+namespace ClientsController.View
 {
     public partial class UsersControlPanelForm : Form
     {
-        private List<User> _selectedUser;
+        private readonly List<User> _selectedUser;
 
         private List<string> GetSelectedUsers
         {

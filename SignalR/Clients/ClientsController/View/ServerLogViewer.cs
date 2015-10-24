@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using ClientsController.Presenter;
 using SignalR.Core.Model;
 using SignalR.Core.Presenter;
+using SignalR.Core.View;
 
-namespace SignalR.Core.View.ServerLogViewerView
+namespace ClientsController.View
 {
     public partial class ServerLogViewer : Form, IServerLogViewerView
     {

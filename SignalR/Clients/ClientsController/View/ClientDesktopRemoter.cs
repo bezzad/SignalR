@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SignalR.Core;
 
-namespace SignalR.Core.View
+namespace ClientsController.View
 {
     public partial class ClientDesktopRemoter : Form
     {

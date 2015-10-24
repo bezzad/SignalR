@@ -1,4 +1,4 @@
-﻿namespace SignalR.Core.View.ServerLogViewerView
+﻿namespace ClientsController.View
 {
     partial class ServerLogViewer
     {

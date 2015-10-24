@@ -35,7 +35,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>..\..\..\Out\Clients\ClientsController\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -80,25 +80,25 @@
     <Compile Include="Controls\AlertButton.Designer.cs">
       <DependentUpon>AlertButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MainControllerView\IMainControllerView.cs" />
-    <Compile Include="View\ServerLogViewerView\IServerLogViewerView.cs" />
-    <Compile Include="View\ServerLogViewerView\ServerLogViewer.cs">
+    <Compile Include="View\IMainControllerView.cs" />
+    <Compile Include="View\IServerLogViewerView.cs" />
+    <Compile Include="View\ServerLogViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ServerLogViewerView\ServerLogViewer.Designer.cs">
+    <Compile Include="View\ServerLogViewer.Designer.cs">
       <DependentUpon>ServerLogViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ClientDesktopRemoterView\ClientDesktopRemoter.cs">
+    <Compile Include="View\ClientDesktopRemoter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ClientDesktopRemoterView\ClientDesktopRemoter.Designer.cs">
+    <Compile Include="View\ClientDesktopRemoter.Designer.cs">
       <DependentUpon>ClientDesktopRemoter.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomClient.cs" />
-    <Compile Include="View\MainControllerView\MainControllerForm.cs">
+    <Compile Include="View\MainControllerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MainControllerView\MainControllerForm.Designer.cs">
+    <Compile Include="View\MainControllerForm.Designer.cs">
       <DependentUpon>MainControllerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -106,30 +106,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="View\RuntimeCompilerView\RuntimeCompiler.cs">
+    <Compile Include="View\RuntimeCompiler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RuntimeCompilerView\RuntimeCompiler.Designer.cs">
+    <Compile Include="View\RuntimeCompiler.Designer.cs">
       <DependentUpon>RuntimeCompiler.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\UsersControllerView\UsersControllerForm.cs">
+    <Compile Include="View\UsersControllerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\UsersControllerView\UsersControllerForm.Designer.cs">
+    <Compile Include="View\UsersControllerForm.Designer.cs">
       <DependentUpon>UsersControllerForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\ServerLogViewerView\ServerLogViewer.resx">
+    <EmbeddedResource Include="View\ServerLogViewer.resx">
       <DependentUpon>ServerLogViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ClientDesktopRemoterView\ClientDesktopRemoter.resx">
+    <EmbeddedResource Include="View\ClientDesktopRemoter.resx">
       <DependentUpon>ClientDesktopRemoter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainControllerView\MainControllerForm.resx">
+    <EmbeddedResource Include="View\MainControllerForm.resx">
       <DependentUpon>MainControllerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RuntimeCompilerView\RuntimeCompiler.resx">
+    <EmbeddedResource Include="View\RuntimeCompiler.resx">
       <DependentUpon>RuntimeCompiler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -137,7 +137,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UsersControllerView\UsersControllerForm.resx">
+    <EmbeddedResource Include="View\UsersControllerForm.resx">
       <DependentUpon>UsersControllerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />

@@ -1,7 +1,8 @@
-﻿using SignalR.Core.Model;
-using SignalR.Core.View;
+﻿using ClientsController.View;
+using SignalR.Core.Model;
+using SignalR.Core.Presenter;
 
-namespace SignalR.Core.Presenter
+namespace ClientsController.Presenter
 {
     public class ServerLogViewerPresenter : Presenter<IServerLogViewerView>
     {

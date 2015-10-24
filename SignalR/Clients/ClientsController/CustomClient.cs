@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using SignalR.Core;
 using SignalR.Core.Model;
 
-namespace SignalR.Core
+namespace ClientsController
 {
     public class CustomClient : Client
     {

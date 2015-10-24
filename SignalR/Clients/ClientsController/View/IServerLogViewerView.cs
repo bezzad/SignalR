@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using ClientsController.Presenter;
 using SignalR.Core.Model;
-using SignalR.Core.Presenter;
+using SignalR.Core.View;
 
-namespace SignalR.Core.View
+namespace ClientsController.View
 {
     public interface IServerLogViewerView : IView<IServerLogViewerView>
     {

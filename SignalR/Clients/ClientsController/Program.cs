@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
+using ClientsController.Presenter;
+using ClientsController.View;
 using SignalR.Core.Model;
 using SignalR.Core.Presenter;
 using SignalR.Core.View;
 
-namespace SignalR.Core
+namespace ClientsController
 {
     static class Program
     {

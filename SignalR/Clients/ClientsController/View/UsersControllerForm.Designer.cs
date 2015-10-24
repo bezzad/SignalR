@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SignalR.Core.View
+namespace ClientsController.View
 {
     partial class UsersControlPanelForm
     {

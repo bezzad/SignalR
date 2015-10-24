@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClientsController.View;
+using SignalR.Core;
 using SignalR.Core.Model;
-using SignalR.Core.View;
-using SignalR.Core.View.ServerLogViewerView;
+using SignalR.Core.Presenter;
 
-namespace SignalR.Core.Presenter
+namespace ClientsController.Presenter
 {
     public class MainControllerPresenter : Presenter<IMainControllerView>
     {

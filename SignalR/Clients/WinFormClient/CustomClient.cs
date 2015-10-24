@@ -1,6 +1,5 @@
 ﻿
 using System.Globalization;
-using SignalR;
 using SignalR.Core;
 
 namespace WinFormClient

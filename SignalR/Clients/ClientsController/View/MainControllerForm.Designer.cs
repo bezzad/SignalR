@@ -1,4 +1,4 @@
-﻿namespace SignalR.Core.View
+﻿namespace ClientsController.View
 {
     partial class MainControllerForm
     {

@@ -210,7 +210,7 @@ namespace SignalR.Core
         }
         public static IEnumerable<ILog> GetEntryCollection(DateTime from, DateTime to, bool showErrors, bool showWarnings, bool showInformations, bool showSuccessAudits, bool showFailureAudits)
         {
-            IEnumerable<ILog> logs = GetEntryCollection(from, to);
+            var logs = GetEntryCollection(from, to);
 
             if (!showErrors)
                 logs = logs.Where(x => x.EntryType != EventLogEntryType.Error).ToList();

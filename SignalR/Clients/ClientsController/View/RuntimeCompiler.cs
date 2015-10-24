@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using FastColoredTextBoxNS;
+using SignalR.Core;
 using SignalR.Core.Extensions;
 
-namespace SignalR.Core.View
+namespace ClientsController.View
 {
     public partial class RuntimeCompiler : Form
     {
@@ -423,7 +424,7 @@ namespace SignalR.Core.View
             txtCompilerErrors.Clear();
 
             CompileResult res;
-            if (CodeGenerator.TryBuild(txtSyntaxParser.Text, out res))
+            if (SignalR.Core.CodeGenerator.TryBuild(txtSyntaxParser.Text, out res))
             {
                 Log("Build succeeded \n", infoStyle);
                 try
