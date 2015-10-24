@@ -1,5 +1,5 @@
 cd /d %~dp0
 
-"..\Bin\SignalR Library\SignalRServer\SignalRServer.exe"
+"..\Out\SignalR\Core.Server\SignalRServer.exe"
 
 pause
