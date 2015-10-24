@@ -5,7 +5,60 @@
 
 A reusable win32 API  for connect any client to server or each other clients. Send data or code from one client to other clients included.
 
+### SignalR Server
+If you want to install or unistall a service for signalR server or just run the server without installing, do following commands:
 
+* Install signalR service:
+
+	$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /i
+	or
+	$ SignalR\Solution Items\InstallSignalRService.bat
+
+
+* Uninstall signalR service:
+
+	$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /u
+	or
+	$ SignalR\Solution Items\UninstallSignalRService.bat
+
+
+* Delete signalR service:
+
+	$ SignalR\Solution Items\DeleteSignalRService.bat
+
+
+* Execute signalR server (without install service):
+
+	$ SignalR\Out\SignalR\Core.Server\SignalRServer.exe /d
+	or
+	$ SignalR\Solution Items\RunServiceOnWPF.bat
+
+	!wpfServer](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/wpfServer.PNG)
+
+
+### SignalR Clients
+A sample project in win32 for present signalR client
+
+![clients](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/clients.PNG)
+
+
+### SignalR Clients Controller
+The clients controller in fact is a signalR client, but this project can be controll all signalR clients in network.
+
+For e.x:
+![clientsController](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/clientsController.png)
+
+In this application you can fetch any events of server from server windows logs by clicking on `Show Server Event Logs`
+![logViewer](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/logViewer.png)
+
+And by selecting one client in from list you can to control that by this form:
+![ControlUser](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/selectedUserController.png)
+
+in `Control User` form you can to send a message to selected users or execute an stored procedure on that clients. <br/>
+By click on `Custom Procedure` you should see this form:
+![dynamicCodeExec](https://raw.githubusercontent.com/Behzadkhosravifar/SignalR/master/img/dynamicCodeExec.PNG)
+
+In `Runtime Dynamic Compiler` form you can type your c# codes to execute on selected users system.
 
 ### Note
 

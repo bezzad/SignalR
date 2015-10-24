@@ -14,13 +14,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProcess.Helpers", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1955837A-7EBA-40B9-BA71-2C8F82AB1D79}"
 	ProjectSection(SolutionItems) = preProject
-		Solution Items\Delete SignalRService.bat = Solution Items\Delete SignalRService.bat
-		Solution Items\Install SignalR Service.bat = Solution Items\Install SignalR Service.bat
+		Solution Items\Auto Run Service.bat = Solution Items\Auto Run Service.bat
+		Solution Items\DeleteSignalRService.bat = Solution Items\DeleteSignalRService.bat
+		Solution Items\InstallSignalRService.bat = Solution Items\InstallSignalRService.bat
 		LICENSE = LICENSE
 		README.md = README.md
-		Solution Items\Run Service (With installation).bat = Solution Items\Run Service (With installation).bat
-		Solution Items\Run Service On WPF.bat = Solution Items\Run Service On WPF.bat
-		Solution Items\Uninstall SignalR Service.bat = Solution Items\Uninstall SignalR Service.bat
+		Solution Items\RunServiceOnWPF.bat = Solution Items\RunServiceOnWPF.bat
+		Solution Items\UninstallSignalRService.bat = Solution Items\UninstallSignalRService.bat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormClient", "SignalR\Clients\WinFormClient\WinFormClient.csproj", "{7C5C6561-7CAE-40FF-91ED-54D598AAC283}"
