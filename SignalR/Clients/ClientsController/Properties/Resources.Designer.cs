@@ -79,5 +79,23 @@ namespace ClientsController.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to admin.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserDirector.
+        /// </summary>
+        internal static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
+            }
+        }
     }
 }

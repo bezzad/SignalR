@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClientsController.Properties;
 using ClientsController.View;
 using SignalR.Core;
 using SignalR.Core.Model;
@@ -23,7 +24,7 @@ namespace ClientsController.Presenter
             {
                 View.ServerControlsEnable = false;
 
-                if (View.Password != "admin")
+                if (View.Username != Resources.Username || View.Password != Resources.Password)
                 {
                     throw new Exception("Your username or password is not correct");
                 }

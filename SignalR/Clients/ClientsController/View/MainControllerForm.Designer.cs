@@ -190,7 +190,7 @@
             this.btnConnect.Location = new System.Drawing.Point(651, 27);
             this.btnConnect.Margin = new System.Windows.Forms.Padding(4);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(181, 60);
+            this.btnConnect.Size = new System.Drawing.Size(172, 60);
             this.btnConnect.TabIndex = 4;
             this.btnConnect.Text = "Connect";
             this.btnConnect.Tickness = 5;
@@ -277,10 +277,10 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(157, 22);
             this.txtUsername.TabIndex = 2;
-            this.txtUsername.Text = "User Director";
+            this.txtUsername.Text = "UserDirector";
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsername.TextForeColor = System.Drawing.Color.Maroon;
-            this.txtUsername.Value = "User Director";
+            this.txtUsername.Value = "UserDirector";
             // 
             // statusBottom
             // 
