@@ -648,7 +648,5 @@ namespace SignalR.Core
 
         #endregion
 
-
-        
     }
 }
