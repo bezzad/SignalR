@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using SignalR;
 using SignalR.Core;
@@ -105,7 +106,15 @@ public sealed partial class WaitSplash : UserControl
     {
         if (_instance != null)
         {
-            ((Control)_instance).Hide();
+            if (_instance.InvokeRequired)
+            {
+                _instance.Invoke(new Action(Hide));
+                return;
+            }
+            else
+            {
+                ((Control) _instance).Hide();
+            }
         }
     }
 }
