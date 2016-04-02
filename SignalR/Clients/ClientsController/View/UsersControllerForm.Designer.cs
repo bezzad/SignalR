@@ -268,13 +268,14 @@ namespace ClientsController.View
             // 
             // flPanelExecuteSP
             // 
+            this.flPanelExecuteSP.AutoScroll = true;
             this.flPanelExecuteSP.Controls.Add(this.btnSP_CloseActiveForm);
             this.flPanelExecuteSP.Controls.Add(this.btnSP_Exit);
             this.flPanelExecuteSP.Controls.Add(this.groupBox1);
             this.flPanelExecuteSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flPanelExecuteSP.Location = new System.Drawing.Point(3, 16);
             this.flPanelExecuteSP.Name = "flPanelExecuteSP";
-            this.flPanelExecuteSP.Size = new System.Drawing.Size(650, 107);
+            this.flPanelExecuteSP.Size = new System.Drawing.Size(650, 123);
             this.flPanelExecuteSP.TabIndex = 0;
             this.toolTipHelper.SetToolTip(this.flPanelExecuteSP, "Stored Procedures");
             // 
@@ -431,7 +432,7 @@ namespace ClientsController.View
             this.gbExecuteSP.Controls.Add(this.flPanelExecuteSP);
             this.gbExecuteSP.Location = new System.Drawing.Point(12, 438);
             this.gbExecuteSP.Name = "gbExecuteSP";
-            this.gbExecuteSP.Size = new System.Drawing.Size(656, 126);
+            this.gbExecuteSP.Size = new System.Drawing.Size(656, 142);
             this.gbExecuteSP.TabIndex = 1;
             this.gbExecuteSP.TabStop = false;
             this.gbExecuteSP.Text = "Execute Stored Procedures";
@@ -441,7 +442,7 @@ namespace ClientsController.View
             this.gbResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbResult.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.gbResult.Location = new System.Drawing.Point(15, 570);
+            this.gbResult.Location = new System.Drawing.Point(15, 586);
             this.gbResult.Name = "gbResult";
             this.gbResult.Size = new System.Drawing.Size(762, 46);
             this.gbResult.TabIndex = 6;
@@ -452,7 +453,7 @@ namespace ClientsController.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 628);
+            this.ClientSize = new System.Drawing.Size(789, 644);
             this.Controls.Add(this.gbResult);
             this.Controls.Add(this.gbExecuteSP);
             this.Controls.Add(this.gbMessageSender);

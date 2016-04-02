@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using SignalR.Core;
 using SignalR.Core.Model;
 
 namespace ClientsController.View
@@ -91,15 +90,21 @@ namespace ClientsController.View
 
         private async void btnSP_Exit_Click(object sender, EventArgs e)
         {
-            var users = GetSelectedUsers;
-
-            if (MessageBox.Show("Are your sure to close [" + string.Join(", ", users) + "] clients ?",
+            if (MessageBox.Show("Are your sure to close [" + string.Join(", ", GetSelectedUsers) + "] clients ?",
                 "Close Client Warning!",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                await CustomClient.Instance.CallByTypeClientsAsync(users, typeof(Environment).AssemblyQualifiedName,
-                    "Exit", new string[] {typeof (int).AssemblyQualifiedName}, new object[] {1});
+                try
+                {
+                    var result = await CustomClient.Instance.InvokeAsync<bool>("RemoveUserManuallyAsync", GetSelectedUsers);
+                    MessageBox.Show("All users manually removed");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error - Remove User From Server Manually", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -110,8 +115,6 @@ namespace ClientsController.View
 
             await CustomClient.Instance.CallClientsAsync(GetSelectedUsers, "GetDesktopCapture", CustomClient.Instance.Username, width, height, cmbImageFormat.Text);
         }
-
-        
 
         private void btnDynamicProcedure_Click(object sender, EventArgs e)
         {

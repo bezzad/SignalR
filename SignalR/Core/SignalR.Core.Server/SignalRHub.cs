@@ -32,8 +32,7 @@ namespace SignalR.Core
             }
             else
             {
-                WindowsEventLog.WriteInfoLog(string.Format("The client by id [{0}] disconnected.\n",
-                    Context.ConnectionId));
+                WindowsEventLog.WriteInfoLog(string.Format("The client by id [{0}] disconnected.\n", Context.ConnectionId));
             }
 
             return base.OnDisconnected(stopCalled);
@@ -196,6 +195,8 @@ namespace SignalR.Core
 
         #endregion
 
+        #region Server Side Methods
+        
         public async Task<bool> UsernameVerificationAsync(User user)
         {
             if (User.ContainsUsername(user.Username)) // this user already is exist
@@ -223,6 +224,41 @@ namespace SignalR.Core
                 return true;
             }
         }
+
+        public async Task<bool> RemoveUserManuallyAsync(List<string> usernames)
+        {
+            try
+            {
+                // First close all clients apps
+                await CallByTypeClientsAsync(usernames, typeof(Environment).AssemblyQualifiedName,
+                    "Exit", new string[] { typeof(int).AssemblyQualifiedName }, new object[] { 1 });
+
+                foreach (var username in usernames)
+                {
+                    var user = User.Users.Values.FirstOrDefault(u => string.Equals(u.Username, username, StringComparison.CurrentCultureIgnoreCase));
+
+                    if (user != null)
+                    {
+                        WindowsEventLog.WriteInfoLog(string.Format("user {0} disconnected manually!\n", usernames));
+
+                        user.Remove();
+                    }
+                    else
+                    {
+                        WindowsEventLog.WriteInfoLog(string.Format("user {0} already disconnected!\n", usernames));
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception exp)
+            {
+                WindowsEventLog.WriteInfoLog(exp.Message);
+                return false;
+            }
+        }
+
+        #endregion
 
         #endregion
     }
