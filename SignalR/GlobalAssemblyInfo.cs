@@ -12,6 +12,6 @@
 [assembly: System.Reflection.AssemblyCopyright("Copyright © Behzad Khosravifar 2015")]
 [assembly: System.Reflection.AssemblyTrademark("SignalR")]
 [assembly: System.Reflection.AssemblyConfiguration("Release")]
-[assembly: System.Reflection.AssemblyVersion("1.0.33")]
-[assembly: System.Reflection.AssemblyFileVersion("1.0.33")]
+[assembly: System.Reflection.AssemblyVersion("1.1.1")]
+[assembly: System.Reflection.AssemblyFileVersion("1.1.1")]
 [assembly: System.Reflection.AssemblyInformationalVersion("Compiled By Behzad")]

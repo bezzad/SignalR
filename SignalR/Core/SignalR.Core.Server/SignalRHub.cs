@@ -307,7 +307,6 @@ namespace SignalR.Core
                 WindowsEventLog.WriteInfoLog(exp.Message);
                 return "Error: " + exp.Message;
             }
-
         }
 
 
