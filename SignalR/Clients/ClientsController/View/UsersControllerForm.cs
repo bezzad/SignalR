@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using SignalR.Core;
 using SignalR.Core.Model;
 
 namespace ClientsController.View
@@ -80,15 +81,29 @@ namespace ClientsController.View
             }
         }
 
-
-
-        private void btnSP_CloseActiveForm_Click(object sender, EventArgs e)
+        private async void btnSP_ShowDesktop_Click(object sender, EventArgs e)
         {
-            FormCollection forms = Application.OpenForms;
-            forms[forms.Count - 1].Close();
+            long width = chkResizeImage.Checked ? (long)numWidth.Value : 0;
+            long height = chkResizeImage.Checked ? (long)numHeight.Value : 0;
+
+            await CustomClient.Instance.CallClientsAsync(GetSelectedUsers, "GetDesktopCapture", CustomClient.Instance.Username, width, height, cmbImageFormat.Text);
         }
 
-        private async void btnSP_Exit_Click(object sender, EventArgs e)
+
+        private async void btnSendCloudMessage_Click(object sender, EventArgs e)
+        {
+            var pImei = txtIMEI.Value;
+            if (String.IsNullOrEmpty(pImei)) pImei = "352961067289634";
+            
+            var args = new { func = 17, imei = pImei, messages = txtSentMessage.Value, userid = 100 };
+            var result = await CustomClient.Instance.InvokeAsync<string>("ApiPostAsync", Properties.Settings.Default.CloudMessagingUrl, args.SplitProperties());
+
+            // respons sample: {"text":"true","err":"ir.shoniz.NO_ERRORS_MESSAGE"}
+
+            MessageBox.Show(result);
+        }
+
+        private async void closeClientApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are your sure to close [" + string.Join(", ", GetSelectedUsers) + "] clients ?",
                 "Close Client Warning!",
@@ -108,15 +123,13 @@ namespace ClientsController.View
             }
         }
 
-        private async void btnSP_ShowDesktop_Click(object sender, EventArgs e)
+        private void closeActionFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            long width = chkResizeImage.Checked ? (long)numWidth.Value : 0;
-            long height = chkResizeImage.Checked ? (long)numHeight.Value : 0;
-
-            await CustomClient.Instance.CallClientsAsync(GetSelectedUsers, "GetDesktopCapture", CustomClient.Instance.Username, width, height, cmbImageFormat.Text);
+            FormCollection forms = Application.OpenForms;
+            forms[forms.Count - 1].Close();
         }
 
-        private void btnDynamicProcedure_Click(object sender, EventArgs e)
+        private void customeProcedureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var dom = new RuntimeCompiler(CustomClient.Instance, GetSelectedUsers);
             dom.ShowDialog(this);

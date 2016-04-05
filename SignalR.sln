@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{45106C92-5F91-4835-9626-E80B507035F4}"
 EndProject
@@ -45,6 +45,21 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Core", "SignalR\Core\SignalR.Core\SignalR.Core.csproj", "{448C0BF8-8F02-4BB8-9FE2-6AE262AAEF91}"
 EndProject
 Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = SignalR\\Core\\SignalR.Core.Client\\SignalR.Core.Client.csproj
+		SccProjectTopLevelParentUniqueName0 = SignalR.sln
+		SccProjectName0 = \u0022$/Shoniz.SaleDistribute.root/Shoniz.SaleDistribute/SaleDistribute/SignalR\u0022,\u0020VOEAAAAA
+		SccLocalPath0 = SignalR
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection0 = Core\\SignalR.Core.Client\\
+		SccProjectUniqueName1 = SignalR\\Core\\SignalR.Core\\SignalR.Core.csproj
+		SccProjectTopLevelParentUniqueName1 = SignalR.sln
+		SccProjectName1 = \u0022$/Shoniz.SaleDistribute.root/Shoniz.SaleDistribute/SaleDistribute/SignalR\u0022,\u0020VOEAAAAA
+		SccLocalPath1 = SignalR
+		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection1 = Core\\SignalR.Core\\
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

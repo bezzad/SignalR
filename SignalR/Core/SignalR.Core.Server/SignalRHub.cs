@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
+using Newtonsoft.Json;
+using SignalR.Core.Extensions;
 using SignalR.Core.Model;
 
 namespace SignalR.Core
@@ -129,10 +136,10 @@ namespace SignalR.Core
         {
             var clientIds = new List<string>();
             clientIds.AddRange(from username in usernames
-                select User.GetUserByName(username)
-                into user
-                where user != null
-                select user.ConnectionId);
+                               select User.GetUserByName(username)
+                                   into user
+                                   where user != null
+                                   select user.ConnectionId);
 
             await Clients.Clients(clientIds).Call(method, args);
         }
@@ -179,10 +186,10 @@ namespace SignalR.Core
         {
             var clientIds = new List<string>();
             clientIds.AddRange(from username in usernames
-                select User.GetUserByName(username)
-                into user
-                where user != null
-                select user.ConnectionId);
+                               select User.GetUserByName(username)
+                                   into user
+                                   where user != null
+                                   select user.ConnectionId);
 
             await Clients.Clients(clientIds).CallByType(type, method, paramTypes, args);
         }
@@ -196,7 +203,7 @@ namespace SignalR.Core
         #endregion
 
         #region Server Side Methods
-        
+
         public async Task<bool> UsernameVerificationAsync(User user)
         {
             if (User.ContainsUsername(user.Username)) // this user already is exist
@@ -257,6 +264,53 @@ namespace SignalR.Core
                 return false;
             }
         }
+
+        /// <summary>
+        /// APIs the http post asynchronous.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="args">The API params.</param>
+        /// <returns></returns>
+        public async Task<string> ApiPostAsync(string url, string args)
+        {
+            try
+            {
+                var myUri = new System.Uri(url);
+                var httpWRequest = WebRequest.Create(myUri);
+                httpWRequest.ContentType = " application/x-www-form-urlencoded;charset=UTF-8";
+                httpWRequest.Timeout = 100000; // millisecond
+                httpWRequest.Method = "POST";
+
+                Byte[] byteArray = Encoding.UTF8.GetBytes(args);
+                httpWRequest.ContentLength = byteArray.Length;
+
+                Stream dataStream = await httpWRequest.GetRequestStreamAsync();
+                dataStream.Write(byteArray, 0, byteArray.Length);
+                dataStream.Close();
+
+                WebResponse tResponse = await httpWRequest.GetResponseAsync();
+
+                dataStream = tResponse.GetResponseStream();
+
+                StreamReader tReader = new StreamReader(dataStream);
+
+                String sResponseFromServer = await tReader.ReadToEndAsync();
+
+                tReader.Close();
+                if (dataStream != null) dataStream.Close();
+                tResponse.Close();
+
+                return sResponseFromServer;
+            }
+            catch (Exception exp)
+            {
+                WindowsEventLog.WriteInfoLog(exp.Message);
+                return "Error: " + exp.Message;
+            }
+
+        }
+
+
 
         #endregion
 

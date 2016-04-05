@@ -13,6 +13,10 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <SccProjectName>"%24/Shoniz.SaleDistribute.root/Shoniz.SaleDistribute/SaleDistribute/SignalR", VOEAAAAA</SccProjectName>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Out\SignalR\Core.Client\</OutputPath>
+    <OutputPath>..\..\..\..\SaleDistribute\Lib\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -61,6 +65,7 @@
     <Compile Include="CompileResult.cs" />
     <Compile Include="EmbeddedFontLoader.cs" />
     <Compile Include="Finalizer.cs" />
+    <Compile Include="HelperExtensions.cs" />
     <Compile Include="NetworkHelper.cs" />
     <Compile Include="Presenter\IPresenter.cs" />
     <Compile Include="Presenter\Presenter.cs" />

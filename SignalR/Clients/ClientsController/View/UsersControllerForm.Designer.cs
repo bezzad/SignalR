@@ -48,8 +48,6 @@ namespace ClientsController.View
             this.txtMessage = new Windows.Forms.HintTextBox(this.components);
             this.toolTipHelper = new System.Windows.Forms.ToolTip(this.components);
             this.flPanelExecuteSP = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSP_CloseActiveForm = new System.Windows.Forms.Button();
-            this.btnSP_Exit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbImageFormat = new System.Windows.Forms.ComboBox();
             this.numHeight = new System.Windows.Forms.NumericUpDown();
@@ -58,9 +56,17 @@ namespace ClientsController.View
             this.chkResizeImage = new System.Windows.Forms.CheckBox();
             this.numWidth = new System.Windows.Forms.NumericUpDown();
             this.btnSP_ShowDesktop = new System.Windows.Forms.Button();
-            this.btnDynamicProcedure = new System.Windows.Forms.Button();
+            this.btnSendCloudMessage = new System.Windows.Forms.Button();
             this.gbExecuteSP = new System.Windows.Forms.GroupBox();
             this.gbResult = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeClientApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeActionFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customeProcedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtIMEI = new Windows.Forms.HintTextBox(this.components);
+            this.txtSentMessage = new Windows.Forms.HintTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.gbUsers.SuspendLayout();
             this.gbMessageSender.SuspendLayout();
@@ -70,6 +76,8 @@ namespace ClientsController.View
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
             this.gbExecuteSP.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvUsers
@@ -86,7 +94,7 @@ namespace ClientsController.View
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowTemplate.Height = 40;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(759, 228);
+            this.dgvUsers.Size = new System.Drawing.Size(775, 192);
             this.dgvUsers.TabIndex = 2;
             this.dgvUsers.Text = "radGridView1";
             // 
@@ -95,9 +103,9 @@ namespace ClientsController.View
             this.gbUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbUsers.Controls.Add(this.dgvUsers);
-            this.gbUsers.Location = new System.Drawing.Point(12, 12);
+            this.gbUsers.Location = new System.Drawing.Point(12, 48);
             this.gbUsers.Name = "gbUsers";
-            this.gbUsers.Size = new System.Drawing.Size(765, 247);
+            this.gbUsers.Size = new System.Drawing.Size(781, 211);
             this.gbUsers.TabIndex = 3;
             this.gbUsers.TabStop = false;
             this.gbUsers.Text = "Selected Users";
@@ -118,7 +126,7 @@ namespace ClientsController.View
             this.gbMessageSender.Controls.Add(this.txtMessage);
             this.gbMessageSender.Location = new System.Drawing.Point(12, 265);
             this.gbMessageSender.Name = "gbMessageSender";
-            this.gbMessageSender.Size = new System.Drawing.Size(765, 167);
+            this.gbMessageSender.Size = new System.Drawing.Size(781, 167);
             this.gbMessageSender.TabIndex = 0;
             this.gbMessageSender.TabStop = false;
             this.gbMessageSender.Text = "Send Message";
@@ -128,7 +136,7 @@ namespace ClientsController.View
             this.cmbSelectSystemIcons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbSelectSystemIcons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSelectSystemIcons.FormattingEnabled = true;
-            this.cmbSelectSystemIcons.Location = new System.Drawing.Point(520, 45);
+            this.cmbSelectSystemIcons.Location = new System.Drawing.Point(536, 45);
             this.cmbSelectSystemIcons.Name = "cmbSelectSystemIcons";
             this.cmbSelectSystemIcons.Size = new System.Drawing.Size(129, 21);
             this.cmbSelectSystemIcons.TabIndex = 3;
@@ -138,7 +146,7 @@ namespace ClientsController.View
             // 
             this.picNotifyIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picNotifyIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picNotifyIcon.Location = new System.Drawing.Point(551, 79);
+            this.picNotifyIcon.Location = new System.Drawing.Point(567, 79);
             this.picNotifyIcon.Name = "picNotifyIcon";
             this.picNotifyIcon.Size = new System.Drawing.Size(80, 72);
             this.picNotifyIcon.TabIndex = 9;
@@ -148,7 +156,7 @@ namespace ClientsController.View
             // 
             this.btnSendMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSendMessage.Cursor = System.Windows.Forms.Cursors.PanEast;
-            this.btnSendMessage.Location = new System.Drawing.Point(671, 61);
+            this.btnSendMessage.Location = new System.Drawing.Point(687, 61);
             this.btnSendMessage.Name = "btnSendMessage";
             this.btnSendMessage.Size = new System.Drawing.Size(75, 47);
             this.btnSendMessage.TabIndex = 4;
@@ -161,7 +169,7 @@ namespace ClientsController.View
             // 
             this.chkSendToInbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkSendToInbox.AutoSize = true;
-            this.chkSendToInbox.Location = new System.Drawing.Point(418, 135);
+            this.chkSendToInbox.Location = new System.Drawing.Point(434, 135);
             this.chkSendToInbox.Name = "chkSendToInbox";
             this.chkSendToInbox.Size = new System.Drawing.Size(91, 17);
             this.chkSendToInbox.TabIndex = 7;
@@ -173,7 +181,7 @@ namespace ClientsController.View
             // 
             this.rdbtnLabelNotify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbtnLabelNotify.AutoSize = true;
-            this.rdbtnLabelNotify.Location = new System.Drawing.Point(418, 78);
+            this.rdbtnLabelNotify.Location = new System.Drawing.Point(434, 78);
             this.rdbtnLabelNotify.Name = "rdbtnLabelNotify";
             this.rdbtnLabelNotify.Size = new System.Drawing.Size(81, 17);
             this.rdbtnLabelNotify.TabIndex = 5;
@@ -185,7 +193,7 @@ namespace ClientsController.View
             // 
             this.rdbtnMessageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbtnMessageBox.AutoSize = true;
-            this.rdbtnMessageBox.Location = new System.Drawing.Point(418, 50);
+            this.rdbtnMessageBox.Location = new System.Drawing.Point(434, 50);
             this.rdbtnMessageBox.Name = "rdbtnMessageBox";
             this.rdbtnMessageBox.Size = new System.Drawing.Size(89, 17);
             this.rdbtnMessageBox.TabIndex = 4;
@@ -200,7 +208,7 @@ namespace ClientsController.View
             this.txtTimeout.ForeColor = System.Drawing.Color.Gray;
             this.txtTimeout.HintValue = "Timeout: 5000 ms";
             this.txtTimeout.IsNumerical = true;
-            this.txtTimeout.Location = new System.Drawing.Point(520, 21);
+            this.txtTimeout.Location = new System.Drawing.Point(536, 21);
             this.txtTimeout.Name = "txtTimeout";
             this.txtTimeout.Size = new System.Drawing.Size(129, 20);
             this.txtTimeout.TabIndex = 2;
@@ -215,7 +223,7 @@ namespace ClientsController.View
             this.rdbtnAlertNotiry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbtnAlertNotiry.AutoSize = true;
             this.rdbtnAlertNotiry.Checked = true;
-            this.rdbtnAlertNotiry.Location = new System.Drawing.Point(418, 22);
+            this.rdbtnAlertNotiry.Location = new System.Drawing.Point(434, 22);
             this.rdbtnAlertNotiry.Name = "rdbtnAlertNotiry";
             this.rdbtnAlertNotiry.Size = new System.Drawing.Size(76, 17);
             this.rdbtnAlertNotiry.TabIndex = 2;
@@ -233,7 +241,7 @@ namespace ClientsController.View
             this.txtTitle.HintValue = "Title";
             this.txtTitle.Location = new System.Drawing.Point(6, 19);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(384, 20);
+            this.txtTitle.Size = new System.Drawing.Size(400, 20);
             this.txtTitle.TabIndex = 0;
             this.txtTitle.Text = "Title";
             this.txtTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -251,7 +259,7 @@ namespace ClientsController.View
             this.txtMessage.Location = new System.Drawing.Point(6, 45);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(384, 116);
+            this.txtMessage.Size = new System.Drawing.Size(400, 116);
             this.txtMessage.TabIndex = 1;
             this.txtMessage.Text = "\r\n\r\n\r\nEnter Message";
             this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -269,41 +277,14 @@ namespace ClientsController.View
             // flPanelExecuteSP
             // 
             this.flPanelExecuteSP.AutoScroll = true;
-            this.flPanelExecuteSP.Controls.Add(this.btnSP_CloseActiveForm);
-            this.flPanelExecuteSP.Controls.Add(this.btnSP_Exit);
             this.flPanelExecuteSP.Controls.Add(this.groupBox1);
+            this.flPanelExecuteSP.Controls.Add(this.groupBox2);
             this.flPanelExecuteSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flPanelExecuteSP.Location = new System.Drawing.Point(3, 16);
             this.flPanelExecuteSP.Name = "flPanelExecuteSP";
-            this.flPanelExecuteSP.Size = new System.Drawing.Size(650, 123);
+            this.flPanelExecuteSP.Size = new System.Drawing.Size(775, 123);
             this.flPanelExecuteSP.TabIndex = 0;
             this.toolTipHelper.SetToolTip(this.flPanelExecuteSP, "Stored Procedures");
-            // 
-            // btnSP_CloseActiveForm
-            // 
-            this.btnSP_CloseActiveForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSP_CloseActiveForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSP_CloseActiveForm.Location = new System.Drawing.Point(3, 3);
-            this.btnSP_CloseActiveForm.Name = "btnSP_CloseActiveForm";
-            this.btnSP_CloseActiveForm.Size = new System.Drawing.Size(100, 100);
-            this.btnSP_CloseActiveForm.TabIndex = 0;
-            this.btnSP_CloseActiveForm.Text = "Close Active Form";
-            this.toolTipHelper.SetToolTip(this.btnSP_CloseActiveForm, "Click to close client application active form\'s.");
-            this.btnSP_CloseActiveForm.UseVisualStyleBackColor = false;
-            this.btnSP_CloseActiveForm.Click += new System.EventHandler(this.btnSP_CloseActiveForm_Click);
-            // 
-            // btnSP_Exit
-            // 
-            this.btnSP_Exit.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSP_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSP_Exit.Location = new System.Drawing.Point(109, 3);
-            this.btnSP_Exit.Name = "btnSP_Exit";
-            this.btnSP_Exit.Size = new System.Drawing.Size(100, 100);
-            this.btnSP_Exit.TabIndex = 1;
-            this.btnSP_Exit.Text = "Close Application";
-            this.toolTipHelper.SetToolTip(this.btnSP_Exit, "Click to close client application.");
-            this.btnSP_Exit.UseVisualStyleBackColor = false;
-            this.btnSP_Exit.Click += new System.EventHandler(this.btnSP_Exit_Click);
             // 
             // groupBox1
             // 
@@ -314,7 +295,7 @@ namespace ClientsController.View
             this.groupBox1.Controls.Add(this.chkResizeImage);
             this.groupBox1.Controls.Add(this.numWidth);
             this.groupBox1.Controls.Add(this.btnSP_ShowDesktop);
-            this.groupBox1.Location = new System.Drawing.Point(215, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(353, 97);
             this.groupBox1.TabIndex = 2;
@@ -411,18 +392,18 @@ namespace ClientsController.View
             this.btnSP_ShowDesktop.UseVisualStyleBackColor = false;
             this.btnSP_ShowDesktop.Click += new System.EventHandler(this.btnSP_ShowDesktop_Click);
             // 
-            // btnDynamicProcedure
+            // btnSendCloudMessage
             // 
-            this.btnDynamicProcedure.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDynamicProcedure.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDynamicProcedure.Location = new System.Drawing.Point(674, 454);
-            this.btnDynamicProcedure.Name = "btnDynamicProcedure";
-            this.btnDynamicProcedure.Size = new System.Drawing.Size(100, 100);
-            this.btnDynamicProcedure.TabIndex = 5;
-            this.btnDynamicProcedure.Text = "Custom Procedure";
-            this.toolTipHelper.SetToolTip(this.btnDynamicProcedure, "Click to run your codes dynamically on the client system.");
-            this.btnDynamicProcedure.UseVisualStyleBackColor = false;
-            this.btnDynamicProcedure.Click += new System.EventHandler(this.btnDynamicProcedure_Click);
+            this.btnSendCloudMessage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendCloudMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSendCloudMessage.Location = new System.Drawing.Point(6, 15);
+            this.btnSendCloudMessage.Name = "btnSendCloudMessage";
+            this.btnSendCloudMessage.Size = new System.Drawing.Size(128, 72);
+            this.btnSendCloudMessage.TabIndex = 3;
+            this.btnSendCloudMessage.Text = "Sent Google Cloud Message To IMEI devices";
+            this.toolTipHelper.SetToolTip(this.btnSendCloudMessage, "Sent Google Cloud Message To IMEI devices");
+            this.btnSendCloudMessage.UseVisualStyleBackColor = false;
+            this.btnSendCloudMessage.Click += new System.EventHandler(this.btnSendCloudMessage_Click);
             // 
             // gbExecuteSP
             // 
@@ -432,7 +413,7 @@ namespace ClientsController.View
             this.gbExecuteSP.Controls.Add(this.flPanelExecuteSP);
             this.gbExecuteSP.Location = new System.Drawing.Point(12, 438);
             this.gbExecuteSP.Name = "gbExecuteSP";
-            this.gbExecuteSP.Size = new System.Drawing.Size(656, 142);
+            this.gbExecuteSP.Size = new System.Drawing.Size(781, 142);
             this.gbExecuteSP.TabIndex = 1;
             this.gbExecuteSP.TabStop = false;
             this.gbExecuteSP.Text = "Execute Stored Procedures";
@@ -444,22 +425,110 @@ namespace ClientsController.View
             this.gbResult.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.gbResult.Location = new System.Drawing.Point(15, 586);
             this.gbResult.Name = "gbResult";
-            this.gbResult.Size = new System.Drawing.Size(762, 46);
+            this.gbResult.Size = new System.Drawing.Size(778, 46);
             this.gbResult.TabIndex = 6;
             this.gbResult.TabStop = false;
             this.gbResult.Text = "Result";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(805, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeClientApplicationsToolStripMenuItem,
+            this.closeActionFormToolStripMenuItem,
+            this.customeProcedureToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // closeClientApplicationsToolStripMenuItem
+            // 
+            this.closeClientApplicationsToolStripMenuItem.Name = "closeClientApplicationsToolStripMenuItem";
+            this.closeClientApplicationsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.closeClientApplicationsToolStripMenuItem.Text = "Close Client Applications";
+            this.closeClientApplicationsToolStripMenuItem.Click += new System.EventHandler(this.closeClientApplicationsToolStripMenuItem_Click);
+            // 
+            // closeActionFormToolStripMenuItem
+            // 
+            this.closeActionFormToolStripMenuItem.Name = "closeActionFormToolStripMenuItem";
+            this.closeActionFormToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.closeActionFormToolStripMenuItem.Text = "Close Action Form";
+            this.closeActionFormToolStripMenuItem.Click += new System.EventHandler(this.closeActionFormToolStripMenuItem_Click);
+            // 
+            // customeProcedureToolStripMenuItem
+            // 
+            this.customeProcedureToolStripMenuItem.Name = "customeProcedureToolStripMenuItem";
+            this.customeProcedureToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.customeProcedureToolStripMenuItem.Text = "Custome Procedure";
+            this.customeProcedureToolStripMenuItem.Click += new System.EventHandler(this.customeProcedureToolStripMenuItem_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtSentMessage);
+            this.groupBox2.Controls.Add(this.txtIMEI);
+            this.groupBox2.Controls.Add(this.btnSendCloudMessage);
+            this.groupBox2.Location = new System.Drawing.Point(362, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(381, 97);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtIMEI
+            // 
+            this.txtIMEI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIMEI.EnterToTab = false;
+            this.txtIMEI.ForeColor = System.Drawing.Color.Gray;
+            this.txtIMEI.HintValue = "IMEI: 352961067289634";
+            this.txtIMEI.Location = new System.Drawing.Point(164, 16);
+            this.txtIMEI.Name = "txtIMEI";
+            this.txtIMEI.Size = new System.Drawing.Size(175, 20);
+            this.txtIMEI.TabIndex = 4;
+            this.txtIMEI.Text = "IMEI: 352961067289634";
+            this.txtIMEI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIMEI.TextForeColor = System.Drawing.Color.Black;
+            this.toolTipHelper.SetToolTip(this.txtIMEI, "Set Message Captions.");
+            this.txtIMEI.Value = "";
+            // 
+            // txtSentMessage
+            // 
+            this.txtSentMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSentMessage.EnterToTab = false;
+            this.txtSentMessage.ForeColor = System.Drawing.Color.Gray;
+            this.txtSentMessage.HintValue = "Message";
+            this.txtSentMessage.Location = new System.Drawing.Point(164, 42);
+            this.txtSentMessage.Multiline = true;
+            this.txtSentMessage.Name = "txtSentMessage";
+            this.txtSentMessage.Size = new System.Drawing.Size(175, 45);
+            this.txtSentMessage.TabIndex = 5;
+            this.txtSentMessage.Text = "Message";
+            this.txtSentMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSentMessage.TextForeColor = System.Drawing.Color.Black;
+            this.toolTipHelper.SetToolTip(this.txtSentMessage, "Set Message");
+            this.txtSentMessage.Value = "";
             // 
             // UsersControlPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 644);
+            this.ClientSize = new System.Drawing.Size(805, 644);
             this.Controls.Add(this.gbResult);
             this.Controls.Add(this.gbExecuteSP);
             this.Controls.Add(this.gbMessageSender);
             this.Controls.Add(this.gbUsers);
-            this.Controls.Add(this.btnDynamicProcedure);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "UsersControlPanelForm";
             this.Text = "Users Control Panel";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
@@ -473,7 +542,12 @@ namespace ClientsController.View
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).EndInit();
             this.gbExecuteSP.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -494,10 +568,7 @@ namespace ClientsController.View
         private System.Windows.Forms.GroupBox gbExecuteSP;
         private System.Windows.Forms.GroupBox gbResult;
         private System.Windows.Forms.FlowLayoutPanel flPanelExecuteSP;
-        private System.Windows.Forms.Button btnSP_CloseActiveForm;
-        private System.Windows.Forms.Button btnSP_Exit;
         private System.Windows.Forms.Button btnSP_ShowDesktop;
-        private System.Windows.Forms.Button btnDynamicProcedure;
         private System.Windows.Forms.PictureBox picNotifyIcon;
         private System.Windows.Forms.ComboBox cmbSelectSystemIcons;
         private System.Windows.Forms.CheckBox chkResizeImage;
@@ -507,6 +578,15 @@ namespace ClientsController.View
         private System.Windows.Forms.NumericUpDown numHeight;
         private System.Windows.Forms.NumericUpDown numWidth;
         private System.Windows.Forms.ComboBox cmbImageFormat;
+        private Button btnSendCloudMessage;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem toolsToolStripMenuItem;
+        private ToolStripMenuItem closeClientApplicationsToolStripMenuItem;
+        private ToolStripMenuItem closeActionFormToolStripMenuItem;
+        private ToolStripMenuItem customeProcedureToolStripMenuItem;
+        private GroupBox groupBox2;
+        private Windows.Forms.HintTextBox txtIMEI;
+        private Windows.Forms.HintTextBox txtSentMessage;
 
     }
 }
