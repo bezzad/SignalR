@@ -70,3 +70,5 @@ Install Nuget packages for server project:
 Install Nuget packages for clients project:
 
 	PM> Install-Package Microsoft.AspNet.SignalR.Client
+	
+----------------------
